@@ -11,7 +11,8 @@
 \usepackage{hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]
+{geometry}
 % --------------------------------------------
 % package "todonotes" is used for notes and comments
 % To disable all notes you can use the option "disable", see second row below:
@@ -46,9 +47,9 @@
 \noindent % Do not delete this line or add an empty line below.
 \begin{tabular}{|l|l|p{9.3cm}|}
 \hline
-Title      		  & \multicolumn{2}{|p{12cm}|}{Behaviour-based malware detection using reinforcement learning} \\
+Title      		  & \multicolumn{2}{|p{12cm}|}{Behaviour-based detection of ransomware attacks in the Cloud using machine learning} \\
 \hline
-Classfificatoin      		  & \multicolumn{2}{|l|}{Provide up to 3 ACM categories*} \\
+Classification      		  & \multicolumn{2}{|l|}{Security and Privacy--Artificial Intelligence--Cloud Computing} \\
 \hline\hline
 \multirow{4}{*}{Student 1}
  & Name           & Yaroslav Popryho\\\cline{2-3}
@@ -63,173 +64,185 @@ Classfificatoin      		  & \multicolumn{2}{|l|}{Provide up to 3 ACM categories*}
  & Program        & Computer Science \\\cline{2-3}
 \hline
 \multirow{3}{*}{Supervisor}
- & Name \& title  & Oleksandr Adamov, University lecturer \\\cline{2-3}
+ & Name \& title  & Oleksandr Adamov, Senior lecturer \\\cline{2-3}
  & E-Mail         &  oleksandr.adamov@bth.se \\\cline{2-3}
  & Department     &  Department of Software Engineering \\
 \hline
 
 \end{tabular}
 
-\vspace{1mm}
-\noindent
-*2012 ACM Computing Classification System: www.acm.org/about/class/2012
-
-\noindent
-**Co-advisor from industry or a higher education institution (HEI).
-
-\todo[inline]{Don't forget to delete the blue comment-boxes before submission.
-See \textbackslash usepackage-rows in the LaTeX-code.}
-\todo[inline]{You need to include and cite some references that are relevant for your work,
-at least in Section \ref{sec:intro} and Section \ref{sec:method}. This can include references to important and/or recent works in the area regarding key concepts and terminology, related work, research designs, etc. You do not need to cite the course literature \cite{berndtsson2007thesis,evans2014write,blomkvist2014metod,host2006att,trochim2015research}. These are added here just to show you how the citation marks and references should look like. Note that references are numbered in alphabetic order. More information about academic writing can be found in Evans et al.'s book \cite{evans2014write}.}
-
 
 \section{Introduction}
 \label{sec:intro}
+Ransomware attacks pose a significant threat to digital information, and with the increasing adoption of cloud storage services, attackers now target cloud environments (Kolodenker et al., 2017). \cite{kolodenker2017ezdec}
 
-Behavior-based malware detection is a crucial area in the field of computer security, as the number of cyber attacks continues to increase and malware becomes more sophisticated. To address these challenges, the use of reinforcement learning for behavior-based malware detection has emerged as a promising solution. Reinforcement learning is a type of machine learning that focuses on learning from interactions with the environment and making decisions based on those experiences.
+The existing literature on ransomware detection has primarily focused on local environments, employing a wide range of machine learning techniques, such as supervised learning, unsupervised learning, and reinforcement learning, to classify and identify potential threats (Sgandurra et al., 2016). \cite{sgandurra2016automated} A recent work by our supervisor, titled "Reinforcement Learning for Anti-Ransomware Testing," \cite{Adamov} demonstrates the potential of reinforcement learning to detect ransomware attacks in local systems. However, there is a limited body of research on applying these approaches to the cloud environment, which presents unique challenges and requirements.
 
-This thesis will focus on exploring the use of reinforcement learning for behavior-based malware detection. A review of existing research will be conducted to understand the current state of the field and identify any limitations in the existing methods for behavior-based malware detection. Based on the review, a gap in the current methods for behavior-based malware detection will be identified and the specific problem to be addressed in this thesis will be to investigate the potential of reinforcement learning to address these limitations.
+In this thesis, we aim to develop a behavior-based ransomware detection system for cloud environments, specifically focusing on Google Drive, using machine learning techniques. We will create a dedicated Google Workspace and utilize the Google Cloud Platform for developing the anomaly detection classifier.
 
-The problem is relevant to the field of computer security, as it has the potential to improve the effectiveness of malware detection and enhance the overall security of computer systems.
-\textit{
-In the introduction, you should describe the field you are working in and eventually lead the reader to the specific problem that you intend to address in your thesis. It is important that your presentation is based on established knowledge and that it clearly identifies a relevant problem that is of general interest.}
+We will review related work in ransomware detection and machine learning approaches (e.g., Zhu et al., 2020; Cabaj et al., 2018), \cite{zhu2019ransomware} \cite{cabaj2018machine} to select suitable techniques for our research. Our anomaly detection classifier will analyze user activities in the cloud, such as file access patterns and permission changes, to detect deviations indicative of ransomware attacks (Al-Rimy et al., 2019). \cite{alrimy2019ransomclassifier}
 
-\textit{Typically, an introduction proceeds from the general to the specific. As a rough guideline, you can think of the following things that an introduction should do (not necessarily in the exact order described below).
-\begin{enumerate}
-    \item Establish the importance of the (general) field.
-    \item Provide relevant background facts or information.
-    \item Define key terminology (if required).
-    \item Present the problem area or research focus, i.e. moving from the general field (see 1.) to the specific area you are dealing with.
-    \item Give a brief overview over existing research/~contributions in the specific area you are dealing with.
-    \item Identify a gap in this work.
-    \item Describe the specific problem you will address (as a result from 6.).
-    \item Explain in which ways the problem (as described in 7.) is relevant.
-\end{enumerate}
-}
+We will validate our system's performance by conducting experiments in our Google Workspace, emulating ransomware attacks, and comparing the classifier's performance against existing techniques. Our thesis aims to contribute a novel, behavior-based detection system for ransomware attacks in cloud environments, advancing the state-of-the-art and providing a scalable solution for various cloud storage providers.
+
 
 \subsection{Ethical, societal and sustainability aspects}
 \label{sec:ethics}
 
-\textit{In the project plan, you should briefly discuss aspects regarding ethics, society and sustainability. If you think there are no such aspects that are relevant for your work, please argue why this is the case. Please note that subsections should be formatted and numbered like this one. The paragraphs of sections, subsections and subsections are not indented.}
 
-\subsubsection{Ethics}\label{sec:Ethics}
-    \begin{enumerate}
+\subsection{Ethics}\label{sec:Ethics}
 
-        \item Privacy concerns: The use of behavior-based malware detection techniques may involve collecting and analyzing data from the user's device, which could potentially compromise their privacy. It's important to consider the ethical implications of collecting and storing this data and to ensure that it's handled securely and in accordance with privacy laws.
+The proposed research will be conducted in accordance with ethical principles and guidelines for academic research. The data used in the study will be properly anonymized to protect the privacy of individuals, and all necessary permissions and approvals will be obtained before conducting the research. The study will also be conducted with the aim of avoiding any harm or negative impact on the society or individuals.
 
-        \item  Bias: Reinforcement learning algorithms can be biased if the training data used to develop them contains bias. It's important to consider the potential for bias in the training data and to ensure that the algorithms are fair and unbiased in their predictions.
 
-    \end{enumerate}
+\subsection{Society}\label{sec:Society}
 
-\subsubsection{Society}\label{sec:Society}
-    \begin{enumerate}
+The proposed research is expected to have a positive impact on society, by contributing to the development of suitable approach for detecting ransomware attacks in the cloud environment. Ransomware attacks cause significant disruptions to normal operations and often result in financial losses, and the proposed research has the potential to mitigate these impacts by detecting and preventing such attacks.
 
-        \item Accessibility: The deployment of behavior-based malware detection techniques should be accessible to a broad range of users, including those with disabilities. It's important to consider the accessibility of the technology and to ensure that it can be used by as many people as possible.
+\subsection{Sustainability}\label{sec:Sustainability}
 
-        \item  Societal impact: The use of behavior-based malware detection techniques may have a societal impact, for example, by contributing to the spread of fear about cybersecurity or increasing the surveillance of individuals. It's important to consider the potential impact on society and to ensure that the technology is used in a responsible and ethical manner.
-
-    \end{enumerate}
-
-\subsubsection{Sustainability}\label{sec:Sustainability}
-    \begin{enumerate}
-
-        \item Energy Efficiency: The behavior-based malware detection system may consume a significant amount of energy, which can have a negative impact on the environment. It is important to consider the energy consumption of the system and ensure that it is designed and deployed in an energy-efficient manner.
-
-        \item  Resource Utilization: The deployment of the system may require a substantial amount of computing resources. It is essential to consider the utilization of resources and make sure that they are used in an efficient and sustainable manner.
-
-        \item Environmentally Responsible Disposal: The end-of-life disposal of the technology used for behavior-based malware detection should be handled in an environmentally responsible way to prevent any potential harm to the environment.
-    \end{enumerate}
-
+The proposed research does not have direct implications for sustainability, as it does not deal with environmental issues. However, the development of more effective methods for detecting and preventing ransomware attacks in the cloud environment may contribute to the overall sustainability of cloud systems, by reducing downtime and ensuring the smooth functioning of critical operations.
 
 \section{Aim and objectives}
 \label{sec:aim}
+\subsection{Aim}\label{sec:Aim}
+The aim of this thesis is to develop a behavior-based ransomware detection system in the cloud environment that is more effective than common rule-based approach.
+\subsection{Objectives}\label{sec:Objectives}
 
-The aim of this project is to evaluate the efficacy and limitations of using reinforcement learning for behavior-based malware detection, and to explore potential ways to improve its performance and robustness.
+To achieve the overall aim, the following objectives have been defined:
 
-Objectives:
 \begin{enumerate}
+\item To conduct a comprehensive review of existing literature on ransomware attacks in the local and cloud environment using machine learning.
 
-    \item To conduct a comprehensive literature review of existing studies on behavior-based malware detection and reinforcement learning.
-    \item To implement and evaluate a reinforcement learning-based behavior-based malware detection system using relevant datasets.
-    \item To compare the performance of the reinforcement learning-based approach with traditional behavior-based malware detection methods.
-    \item To identify and analyze the impact of various design choices, such as reward function, feature selection, and representation, on the performance of the reinforcement learning-based malware detection system.
-    \item To investigate potential methods for improving the generalizability and robustness of the reinforcement learning-based approach in the face of new and evolving threats.
-    \item To examine the feasibility and benefits of using reinforcement learning for dynamic adaptation of the behavior-based malware detection system to changes in the operating environment.
-    \item To address the interpretability and explainability challenges of reinforcement learning-based malware detection for stakeholders in the cybersecurity domain.
+\item To create an isolated sandbox for imitation ransomware attacks in Google Workspace environment.
+
+\item To develop a behavior-based ransomware detection model that leverages machine learning techniques.
+ 
+\item To evaluate the performance of the proposed model in terms of its accuracy and scalability.
+
+\item To perform a thorough analysis of the results and compare the proposed model with existing approaches for ransomware detection.
+
+\item To provide recommendations for future work in this area and suggest potential applications for the proposed model.
+
 \end{enumerate}
-
-\textit{
-This section should contain concise and clear descriptions of what you want to achieve with this thesis (aim), and how this overall aim is broken down into measurable and operationable objectives. 
-}
-
-
+Each of these objectives is clearly defined and measurable, and will contribute to the achievement of the overall aim of the thesis. The results of the research will provide valuable insights into the behavior-based detection of ransomware attacks in the cloud environment and the potential of machine learning techniques in addressing this challenge.
 
 \section{Research questions}
 \label{sec:rq}
     \begin{enumerate}
-    
-        \item How effective is reinforcement learning in detecting malware based on its behavior
-        compared to traditional signature-based methods?
-        \item Can reinforcement learning algorithms improve the accuracy and speed of behavior-
-        based malware detection in real-time environments?
-        \item What are the limitations of using reinforcement learning for behavior-based malware
-        detection and how can they be addressed?
-        \item (Optional) Can reinforcement learning be used to dynamically update malware detection models
-        based on changing malware behavior patterns?
-        \item (Optional) How does the choice of reinforcement learning algorithm impact the effectiveness of
-        behavior-based malware detection?
-        \item (Optional) How does the choice of reward function affect the performance of reinforcement learning-based malware detection?
-        \item (Optional) What is the impact of feature selection and representation on the accuracy of reinforcement learning-based malware detection?
-        \item (Optional) How can the generalizability and robustness of reinforcement learning-based
-        malware detection be improved in the face of new and evolving threats?
+
+        \item Which ML techniques have been used for ransomware detection attacks?
+        \item How can the false positive rate of the machine learning-based ransomware detection system be reduced while maintaining high detection accuracy?
+        \item How does the size and complexity of cloud environments impact the efficiency of machine learning-based ransomware detection?
     \end{enumerate}
 
 \section{Method}
 \label{sec:method}
-This section should describe the research design or methods you intend to use to gather the evidence (data) you need to solve the problem or answer the research questions, and explain why these
-methods are appropriate. If you intend to measure certain properties or attributes, you
-need to explain why these properties or attributes are relevant and how they could be measured
-in a reliable way.
 
-Please make sure to discuss whether there are aspects in your work that might require
-approval by an ethics committee (see Section \ref{sec:ethics}). This is particularly important
-when your research involves experiments with humans.
+
+In order to address the research questions of this thesis and develop a behavior-based detection system for ransomware attacks in cloud storage, we propose the following methodology, broken down into the following phases: literature review, data collection and preprocessing, model development, evaluation, and retraining.
+
+
+
+To address RQ1, a comprehensive literature review will be conducted to identify the ML techniques that have been used for ransomware detection attacks. Relevant databases such as IEEE Xplore, ACM Digital Library, and Google Scholar will be searched for articles, conference proceedings, and other academic works. Keywords such as "ransomware detection," "machine learning," "cloud storage," "Google Drive," and "anomaly detection" will be used to search for relevant literature. The review will focus on identifying the state-of-the-art ML techniques, feature extraction methods, and the metrics used for evaluating the performance of ransomware detection models.
+
+To create a dataset for model training and testing, we will develop an environment to emulate a ransomware attack in Google Workspace, as well as a program for running controlled ransomware attacks with different settings. We will collect log events related to Google Drive activities during the simulated ransomware attacks and during normal usage. The dataset will be preprocessed to extract relevant features and labeled to indicate whether each event is part of a ransomware attack or not.
+
+An anomaly detection model will be developed using the dataset collected and preprocessed in the previous phase. Supervised learning ML technique and algorithms will be explored and compared (e.g., SVM, random forests). The model will be trained and fine-tuned to detect ransomware attacks with high accuracy while minimizing the false positive rate, addressing RQ2.
+
+The performance of the developed model will be evaluated using standard metrics such as precision, recall, F1-score, and area under the ROC curve. The model's efficiency and scalability will be assessed in terms of computational complexity and resource consumption, addressing RQ3. Cross-validation techniques and other model selection strategies will be used to prevent overfitting and ensure the generalizability of the results.
+
+To maintain the quality of the model and keep it up-to-date, a retraining strategy will be implemented. The model will be retrained weekly using a cron job, and the updated model will be deployed to Google Cloud Vertex AI. The retraining process will leverage Google Cloud Functions and Vertex AI, with triggers set up to monitor new log events related to Google Drive.
 
 
 \section{Expected outcomes}
 \label{sec:outcome}
-This section should briefly describe what you expect as an outcome and in which ways this outcome is important/helpful and for whom. 
 
+By following the proposed methodology and research design, we expect to achieve the following outcomes:
+
+Comprehensive understanding of ML techniques for ransomware detection: The literature review will provide a thorough understanding of the state-of-the-art ML techniques, feature extraction methods, and performance evaluation metrics in the domain of ransomware detection. This knowledge will be crucial in designing and implementing an efficient ransomware detection system for cloud storage.
+
+Efficient ransomware detection model in the cloud: The development of an anomaly detection model based on the collected and preprocessed dataset is expected to yield a high-performance ransomware detection system, capable of identifying ransomware attacks in cloud storage environments with high accuracy and low false positive rates.
+
+Insights into the impact of cloud environment size and complexity on detection efficiency: By evaluating the developed model in terms of computational complexity and resource consumption, we expect to gain insights into how the size and complexity of cloud environments may impact the efficiency of machine learning-based ransomware detection systems. This understanding will be valuable for future research and development efforts in the field of cloud security.
+
+Robust retraining and deployment strategy: The implementation of a retraining strategy and deployment on Google Cloud Vertex AI will ensure that the ransomware detection model remains up-to-date and accurate in detecting new and evolving ransomware threats. This outcome will demonstrate the feasibility of maintaining a high-quality ML-based ransomware detection system in a dynamic threat landscape.
+
+Contribution to the field of cloud security: By developing a behavior-based detection system for ransomware attacks in cloud storage and addressing the research questions, this project will contribute to the growing body of knowledge in the field of cloud security. The findings and insights gained from this research will be valuable for both academia and industry, helping to improve the security of cloud storage services and protect users from ransomware attacks.
 
 \section{Time and activity plan}
 \label{sec:plan}
-This section should provide information about project planning and project tracking.
-Project planning means a list of tasks that will be carried out to reach your aim,
-and how these tasks are placed in time, i.e. a \textit{work breakdown structure}
-and a \textit{schedule}.
-Project tracking means a description of how you intend to follow up your work and make it possible to check whether you are ``on track''.
 
-Please include activities beyond just preparing and submitting the required documents.
-A trivial work breakdown structure like ``planning, data collection, analysis,
-report writing'' is insufficient. You don't need to prepare a detailed weekly
-schedule, though, but you must try to be realistic.
-Make sure to include some slack for taking care of feedback and unexpected delays.
+
+\subsection{Data Collection (2 weeks):}
+\begin{enumerate}
+\item {Collect and organize the necessary data for the study}
+\item {Ensure the quality and reliability of the collected data}
+\end{enumerate}
+
+\subsection {Data Analysis (3 weeks):}
+\begin{enumerate}
+\item {Analyze the collected data using appropriate methods}
+\item {Interpret the results and draw meaningful conclusions}
+\item {Prepare visual representations of the results (e.g. graphs, charts, etc.)}
+\end{enumerate}
+
+\subsection {Report Writing (3 weeks):}
+\begin{enumerate}
+\item {Write the main body of the report, including a literature review, methodology, results, and conclusions}
+\item {Prepare the introduction and conclusion of the report}
+\item {Format the report according to the required guidelines and standards}
+\item {Proofread and edit the report to ensure accuracy and clarity}
+\end{enumerate}
+
+\subsection {Feedback and Revisions (1 week):}
+\begin{enumerate}
+\item {Obtain feedback from the supervisor on the report}
+\item {Incorporate the feedback and make necessary revisions}
+\item {Ensure the final report meets the requirements and standards.}
+\end{enumerate}
+
+\subsection {Final Submission (1 week):}
+\begin{enumerate}
+\item {Submit the final report}
+\item {Prepare for the oral examination and defense of the thesis.}
+\end{enumerate}
 
 \subsection{Supervision plan}
-Project tracking and follow-up should, among others, include a brief description of how you and your supervisor plan to organize the supervision.
 
-Briefly describe the ``way-of-working'' you have agreed upon with your supervisor and how often you intend to meet (physically or virtually). For example, state how and when you intend to inform your supervisor about your progress and issues. 
-
-When you discuss your work and document drafts with your supervisor, consider that feedback cannot be requested outside regular office hours, \emph{even though submission deadlines might be scheduled on a Sunday}. Supervisors should give feedback in a reasonable time-frame. Planning and adhering to internal draft deadlines help you to receive quality feedback, on time. 
-
+We have agreed with our supervisor to virtually meet once every two weeks to track the progress of our master thesis. During these meetings, we will discuss the current status of our project and address any questions or issues that may arise. We will also be utilizing Github to track our progress and share the code with  supervisor. This way, he can easily keep track of my commited changes and provide feedback in a timely manner.
 
 \section{Limitations and risk management}
-\label{sec:risks}
-This section should provide a description of the limitations of your
-work, and a brief analysis of \textit{risks}, i.e. what might go wrong. For each risk that
-is either serious or likely to happen, you should have a \textit{mitigation plan}, i.e.
-what you do to prevent risks and what do you do when they actually happen.
-Make sure to think about non-trivial risks.
+\subsection{Limitations and Mitigation Strategies}
+
+The following are the limitations of this thesis, and the corresponding mitigation strategies that have been identified:
+
+\begin{enumerate}
+\item Limitation: The proposed model is limited to detecting only known ransomware variants, and may not be able to detect new, previously unseen variants.
+\begin{itemize}
+\item Mitigation Strategy: Regular updates to the training data of the proposed model will be performed to ensure its ability to detect new ransomware variants.
+\end{itemize}
+\item Limitation: The proposed model is based on the assumption that the behavior patterns of ransomware are distinguishable from those of benign software, which may not always be the case.
+\begin{itemize}
+    \item Mitigation Strategy: To ensure that the proposed model is robust and not overly reliant on the assumption of distinguishable behavior patterns, the model will be evaluated on a diverse range of data and compared with other existing approaches for ransomware detection.
+\end{itemize}
+\end{enumerate}
+
+
+
+\subsection{Risk Management}
+
+The following are the identified risks and the corresponding mitigation strategies:
+
+\begin{enumerate}
+\item Risk: Confidential data may be at risk of exposure during the collection and analysis of data for model training and evaluation.
+\begin{itemize}
+\item Mitigation Strategy: Data collected for model training and evaluation will be anonymized to protect confidential information, and strict access controls will be implemented to ensure that only authorized personnel have access to the data.
+\end{itemize}
+\item Risk: The proposed model may result in a high number of false positives, leading to potential disruption of normal system operations.
+\begin{itemize}
+    \item Mitigation Strategy: Thorough evaluation of the model's performance on a diverse range of data will be performed, and its performance will be compared with other existing approaches for ransomware detection. The model's parameters will be adjusted as necessary to minimize false positives, and the results will be validated through field testing in a controlled environment. 
+\end{itemize}
+\end{enumerate}
 
 
 % All references are stored in a separate bib-file: thesis-refs.bib
@@ -237,11 +250,12 @@ Make sure to think about non-trivial risks.
 \bibliography{thesis-refs}
 \bibliographystyle{IEEEtranS}
 
+
 % Please place the next three lines in comments if you do not need a signature enclosure.
 % --------------------------------------------
-\appendix
-\newpage
-\input{company-signatures_eng}
+% \appendix
+% \newpage
+% \input{company-signatures_eng}
 % --------------------------------------------
 
 \end{document}
