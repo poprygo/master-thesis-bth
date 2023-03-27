@@ -1,2 +1,3 @@
 # master-thesis-bth
-Behavior-based malware detection with reinforcement learning
+Behaviour-based detection of ransomware attacks in the Cloud using
+machine learning
