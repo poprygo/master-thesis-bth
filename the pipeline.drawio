@@ -1,0 +1,22 @@
+<mxfile host="app.diagrams.net" modified="2023-05-06T13:48:52.407Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0" etag="8J2f-DRewRhzHv4c1lGx" version="21.2.9" type="github">
+  <diagram name="Page-1" id="uRteCm0aIns5usV4A_1X">
+    <mxGraphModel dx="1111" dy="761" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BqToEBIcs_CH5NTZj-0n-1" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://knowledge.kronologic.ai/hubfs/logo%20admin.png;clipPath=inset(10% 32.33% 42.89% 33.67%);" vertex="1" parent="1">
+          <mxGeometry x="50" y="434" width="145.3" height="151" as="geometry" />
+        </mxCell>
+        <mxCell id="BqToEBIcs_CH5NTZj-0n-2" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.landbigdata.info/cscproject/images/dataset_logo.png;" vertex="1" parent="1">
+          <mxGeometry x="220" y="230" width="170" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="BqToEBIcs_CH5NTZj-0n-3" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://cdn-icons-png.flaticon.com/512/2083/2083213.png;" vertex="1" parent="1">
+          <mxGeometry x="470" y="250" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="BqToEBIcs_CH5NTZj-0n-4" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://techcrunch.com/wp-content/uploads/2021/05/VertexAI-512-color.png;" vertex="1" parent="1">
+          <mxGeometry x="600" y="460" width="133" height="132.74" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
