@@ -4,5 +4,5 @@ machine learning
 
 
 ## Pipeline
-![alt text](https://github.com/poprygo/master-thesis-bth/blob/main/Pipeline.jpg?raw=true)
+![alt text](https://github.com/poprygo/master-thesis-bth/blob/main/Pipeline.png?raw=true)
 
